@@ -1,6 +1,3 @@
-from src.widget import get_date, mask_account_card
-
-
 def get_mask_card_number(card_number: str) -> str:
     """
     Маскирует номер банковской карты по формату: XXXX XX** **** XXXX.
@@ -33,8 +30,3 @@ def get_mask_account(account_number: str) -> str:
         raise ValueError("Номер счёта должен содержать минимум 4 цифры.")
 
     return f"**{acc_str[-4:]}"
-
-
-print(mask_account_card("Visa Platinum 7000792289606361"))
-print(mask_account_card("Счет 73654108430135874305"))
-print(get_date("2024-03-11T02:26:18.671407"))
