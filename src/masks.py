@@ -1,3 +1,6 @@
+from src.widget import get_date, mask_account_card
+
+
 def get_mask_card_number(card_number: str) -> str:
     """
     Маскирует номер банковской карты по формату: XXXX XX** **** XXXX.
@@ -5,7 +8,7 @@ def get_mask_card_number(card_number: str) -> str:
     :param card_number: Номер карты (16 цифр)
     :return: Замаскированный номер карты
     """
-
+    card_str = card_number
     if len(card_str) != 16:
         raise ValueError("Номер карты должен содержать 16 цифр.")
 
@@ -25,14 +28,12 @@ def get_mask_account(account_number: str) -> str:
     :param account_number: Номер счёта
     :return: Замаскированный номер счёта
     """
-
+    acc_str = account_number
     if len(acc_str) < 4:
         raise ValueError("Номер счёта должен содержать минимум 4 цифры.")
 
     return f"**{acc_str[-4:]}"
 
-
-from src.widget import mask_account_card, get_date
 
 print(mask_account_card("Visa Platinum 7000792289606361"))
 print(mask_account_card("Счет 73654108430135874305"))
