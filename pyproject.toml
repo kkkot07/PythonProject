@@ -22,3 +22,7 @@ pytest = "^8.4.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+exclude = 'tests|\.venv'
+ignore_missing_imports = true
